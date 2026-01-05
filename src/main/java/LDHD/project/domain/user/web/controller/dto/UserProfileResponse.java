@@ -37,7 +37,7 @@ public class UserProfileResponse {
                 .loginId(user.getLoginId())
                 .name(user.getName())
                 .email(user.getEmail())
-                .created_at(user.getCreated_at())
+                .created_at(user.getCreatedAt())
                 .profile(ProfileDetail.builder()
                         .gender(user.getGender())
                         .birthDate(user.getBirthDate() != null ? user.getBirthDate().toString() : null)
