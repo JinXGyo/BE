@@ -30,6 +30,8 @@ public enum ErrorCode {
     INVALID_NOTIFICATION(HttpStatus.NOT_FOUND, "NOTI400", "존재하지 않는 알림입니다."),
     INVALID_NOTIFICATION_TYPE(HttpStatus.NOT_FOUND, "NOTI401", "존재하지 않는 알림 유형입니다."),
 
+    //FILE
+    FILE_EMPTY(HttpStatus.NOT_FOUND,"FILE400","파일이 비어있습니다."),
 
     //AUTH(권한 없음)
     UNAUTHORIZED(HttpStatus.FORBIDDEN, "AUTH400", "접근 권한이 없습니다."),
