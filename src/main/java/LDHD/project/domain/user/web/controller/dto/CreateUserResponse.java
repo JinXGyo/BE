@@ -3,6 +3,8 @@ package LDHD.project.domain.user.web.controller.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @NoArgsConstructor
 @Getter
 public class CreateUserResponse {
