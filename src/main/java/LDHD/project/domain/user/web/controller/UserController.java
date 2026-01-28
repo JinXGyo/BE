@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
-
+/*
     //회원 가입
     @Operation(summary = "회원 가입", description = "새로운 회원을 등록합니다.")
     @PostMapping
@@ -28,7 +28,7 @@ public class UserController {
 
         return GlobalResponse.onSuccess(SuccessCode.CREATED, response);
     }
-
+*/
     //회원 삭제
     @Operation(summary = "회원 삭제", description = "특정 회원을 삭제합니다.")
     @DeleteMapping("/{userId}")
@@ -38,6 +38,7 @@ public class UserController {
 
         return GlobalResponse.onSuccess(SuccessCode.DELETED, response);
     }
+    /*
     //회원 정보 수정
     @Operation(summary = "회원 정보 수정", description = "회원의 정보를 수정합니다.")
     @PutMapping("/{userId}")
@@ -47,7 +48,7 @@ public class UserController {
 
         return GlobalResponse.onSuccess(SuccessCode.UPDATED, response);
     }
-
+*/
     //회원 프로필 조회
     @Operation(summary = "회원 프로필 조회", description = "회원의 상세 프로필 정보를 조회합니다.")
     @GetMapping("/profile/{userId}")

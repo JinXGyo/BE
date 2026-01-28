@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 public class UserProfileResponse {
 
     private Long user_id;
-    private String loginId;
     private String name;
     private String email;
     private LocalDateTime created_at;
@@ -34,7 +33,6 @@ public class UserProfileResponse {
     public static UserProfileResponse from(User user) {
         return UserProfileResponse.builder()
                 .user_id(user.getId())
-                .loginId(user.getLoginId())
                 .name(user.getName())
                 .email(user.getEmail())
                 .created_at(user.getCreatedAt())
