@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class UserService {
 
     private final UserRepository userRepository;
-
+/*
     // 회원 가입
     @Transactional // readOnly 기본 값: false
     public CreateUserResponse createUser(CreateUserRequest request) {
@@ -54,7 +54,7 @@ public class UserService {
         return new CreateUserResponse(request.getName());
 
     }
-
+*/
     // 회원 삭제
     @Transactional
     public DeleteUserResponse deleteUser(Long userId) {
@@ -68,7 +68,7 @@ public class UserService {
         return new DeleteUserResponse(userId);
 
     }
-
+/*
     //회원 정보 수정
     @Transactional
     public UpdateUserResponse updateUser(Long userId, UpdateUserRequest request) {
@@ -105,7 +105,7 @@ public class UserService {
                 user.getBirthDate()
         );
     }
-
+*/
     // 프로필 조회
     public UserProfileResponse getUserProfile(Long userId) {
 

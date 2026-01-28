@@ -7,9 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 @Table(name = "users")
 @Entity
 @NoArgsConstructor
@@ -19,45 +16,50 @@ public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    // profile 조회용
+    @Column
+    private Integer gender;
 
     @Column
-    String name;
+    private String birthDate;
+
+    // 권환 확인
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+    // provider & providerId : 현재는 필요 x, 나중에 카카오나 네이버 로그인까지 확장 시 사용자 식별에 사용
+    @Column
+    private String provider;
 
     @Column
-    String loginId;
-
-    @Column
-    String loginPassword;
-
-    @Column(unique = true)
-    String email;
-
-    @Column
-    String address;
-
-    @Column
-    int age;
-
-    @Column //(1: 남, 2: 여)
-    Integer gender;
-
-    @Column
-    LocalDate birthDate;
-
+    private String providerId;
 
     @Builder
-    public User(String name, String loginId, String loginPassword, String email, String address, int age,
-                Integer gender, LocalDate birthDate) {
+    public User(String name, String email, Integer gender, String birthDate, Role role, String provider, String providerId) {
 
         this.name = name;
-        this.loginId = loginId;
-        this.loginPassword = loginPassword;
         this.email = email;
-        this.address = address;
-        this.age = age;
         this.gender = gender;
         this.birthDate = birthDate;
+        this.role = role;
+        this.provider = provider;
+        this.providerId = providerId;
+    }
 
+    public User update(String name){
+        this.name = name;
+        return this;
+    }
+    public String getRoleKey() {
+        return this.role.getKey();
     }
 }
